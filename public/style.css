@@ -219,6 +219,7 @@ a,
 }
 
 .hero .section-img {
+  z-index: -10;
   margin-top: 24px;
   margin-left: -87px;
   grid-column-end: -1;
