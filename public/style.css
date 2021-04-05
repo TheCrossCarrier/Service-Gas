@@ -1,0 +1,328 @@
+/* Fonts */
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@500&family=Manrope:wght@600&display=swap');
+
+/* Variables */
+
+:root {
+  --clr-red:       hsl(356, 82%, 51%);
+  --clr-dark-red:  hsl(356, 82%, 35%);
+  --clr-blue:      hsl(224, 55%, 37%);
+  --clr-dark-blue: hsl(224, 55%, 21%);
+  --clr-white:     white;
+  --ff-primary:      'Manrope', sans-serif;
+  --ff-secondary:    'Exo 2', sans-serif;
+  --box-shadow-step: 3px;
+  --box-shadow-border:
+    0 0 0 var(--box-shadow-step)           var(--clr-red),
+    0 0 0 calc(var(--box-shadow-step) * 2) var(--clr-white),
+    0 0 0 calc(var(--box-shadow-step) * 3) var(--clr-blue);
+  --box-shadow-border-bottom:
+    0 var(--box-shadow-step)           0 0 var(--clr-red),
+    0 calc(var(--box-shadow-step) * 2) 0 0 var(--clr-white),
+    0 calc(var(--box-shadow-step) * 3) 0 0 var(--clr-blue);
+  --logo-size: 120px;
+}
+
+/* Preset */
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Exo 2', sans-serif;
+  font-weight: 500;
+}
+
+ul {
+  list-style: none;
+}
+
+a,
+:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* COMPONENTS */
+
+/* Container */
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  max-width: 1296px;
+  box-sizing: content-box;
+}
+
+/* Section separator */
+
+.section-separator {
+  margin-top: calc(var(--box-shadow-step) * -1);
+  padding-bottom: calc(var(--box-shadow-step) * 3);
+}
+
+.section-separator > div {
+  height: var(--box-shadow-step);
+  box-shadow: var(--box-shadow-border-bottom);
+}
+
+/* Logo */
+
+.logo {
+  margin: calc(var(--box-shadow-step) * 3);
+  width: calc(var(--logo-size) - var(--box-shadow-step) * 6);
+  height: calc(var(--logo-size) - var(--box-shadow-step) * 6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow-border);
+}
+
+/* HEADER */
+
+.header {
+  --header-height: 85px;
+  padding-bottom: calc(var(--logo-size) - var(--header-height));
+}
+
+.header .inner {
+  position: relative;
+  margin-left: calc(var(--logo-size) / 2);
+  padding-left: calc(var(--logo-size) / 2);
+  height: var(--header-height);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: var(--box-shadow-border-bottom);
+}
+
+.header .inner::before {
+  content: '';
+}
+
+/* Logo&Text */
+
+.header .logo {
+  position: absolute;
+  top: 0;
+  left: calc(var(--logo-size) / -2);
+}
+
+.header h1 {
+  font-family: var(--ff-primary);
+  font-weight: 600;
+  font-size: 24px;
+  color: var(--clr-dark-blue);
+}
+
+/* Address */
+
+.address {
+  display: flex;
+  align-items: center;
+  width: 377px;
+}
+
+.address .icon {
+  flex: none;
+  margin-right: 20px;
+  width: 34px;
+  height: 34px;
+  background-image: url(img/geo.svg);
+}
+
+.address .text {
+  font-size: 18px;
+  font-style: normal;
+  color: var(--clr-blue);
+}
+
+.address .text .small {
+  font-size: 14px;
+  color: var(--clr-dark-blue);
+}
+
+/* Phone */
+
+.phone {
+  display: flex;
+  align-items: center;
+}
+
+.phone .icon {
+  flex: none;
+  margin-right: 20px;
+  width: 30px;
+  height: 31px;
+  background-image: url(img/phone.svg);
+}
+
+.phone a {
+  font-size: 24px;
+  color: var(--clr-red);
+}
+
+.phone a:hover {
+  text-decoration: underline;
+}
+
+/* MAIN */
+
+/* Hero */
+
+.hero.container {
+  --rows-quantity: 3;
+  padding-top: 100px;
+  padding-bottom: calc(100px - var(--box-shadow-step));
+  max-width: 1076px;
+  display: grid;
+  grid-template: repeat(calc(var(--rows-quantity) + 1), auto) / repeat(2, auto);
+}
+
+.hero h2 {
+  font-size: 36px;
+  text-transform: uppercase;
+  color: var(--clr-dark-red);
+  margin-bottom: 31px;
+}
+
+.hero h3 {
+  margin-bottom: 25px;
+  font-size: 42px;
+  text-transform: uppercase;
+  color: var(--clr-red);
+}
+
+.hero h3 .small {
+  margin-left: 22px;
+  font-family: var(--ff-secondary);
+  font-size: 24px;
+  font-weight: 500;
+  text-transform: none;
+  color: var(--clr-blue);
+}
+
+.hero p {
+  max-width: 493px;
+  font-size: 24px;
+  color: var(--clr-dark-blue);
+}
+
+.hero .section-img {
+  margin-top: 24px;
+  margin-left: -87px;
+  grid-column-end: -1;
+  grid-row: 1 / -1;
+}
+
+/* Services */
+
+.services.container {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.services ul {
+  --row-gap: 50px;
+  margin-bottom: calc(var(--row-gap) * -1);
+  width: 100%;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: space-evenly;
+}
+
+.services li {
+  margin: 0 25px var(--row-gap);
+  position: relative;
+  width: 350px;
+  height: 191px;
+  display: flex;
+  border-radius: 5px;
+}
+
+.services li::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .5;
+  background: center/cover no-repeat;
+  border-radius: inherit;
+  box-shadow: 1px 2px 10px rgba(0, 0, 0, .5);
+}
+
+.services li:first-of-type::after {
+  background-image: url(img/diagnostic.jpg);
+}
+
+.services li:nth-of-type(2)::after {
+  background-image: url(img/diagnostic.jpg);
+}
+
+.services li:nth-of-type(3)::after {
+  background-image: url(img/diagnostic.jpg);
+}
+
+.services li:nth-of-type(4)::after {
+  background-image: url(img/diagnostic.jpg);
+}
+
+.services li:nth-of-type(5)::after {
+  background-image: url(img/diagnostic.jpg);
+}
+
+.services .title-area {
+  --height: 95px;
+  align-self: flex-end;
+  padding: 18px 45px 17px 20px;
+  width: 100%;
+  height: var(--height);
+  display: flex;
+  align-items: center;
+  background-color: var(--clr-white);
+  border-radius: inherit;
+  border-top-right-radius: var(--height);
+}
+
+.services h2 {
+  font-size: 22px;
+  color: var(--clr-blue);
+}
+
+.services .highlight {
+  color: var(--clr-red);
+}
+
+/* MEDIA QUERIES */
+
+@media (max-width: 1116px) {
+  .header .inner {
+    justify-content: space-around;
+  }
+  .header .inner::before {
+    content: initial;
+  }
+  .header .address {
+    display: none;
+  }
+  .hero.container {
+    display: block;
+    width: fit-content;
+  }
+  .hero .section-img {
+    margin-left: 0;
+  }
+}
