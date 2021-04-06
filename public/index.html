@@ -17,70 +17,99 @@
 <body>
 
   <header class="header container">
-    <div class="inner">
-    
-      <h1>
-        <a href="#">
-          <span class="logo">
-            <img src="img/logo.png" width="87" height="55" alt="Сервис Газ Крым">
-          </span>
-          <span>Установка ГБО в Крыму</span>
-        </a>
-      </h1>
+
+    <div class="top-strip">
 
       <div class="address">
-        <div class="icon" aria-hidden="true"></div>
-        <address class="text">Симферопольский район, с. Фонтаны, ул. Озенбашская, 2а<div class="small">(на территории МЕТАН заправки VTG)</div></address>
+        <div class="icon address__icon" aria-hidden="true"></div>
+        <address class="address__text">Симферопольский район, с. Фонтаны, ул. Озенбашская, 2а</address>
+      </div>
+
+      <div class="working-hours">
+        <div class="icon working-hours__icon" aria-hidden="true"></div>
+        <span class="working-hours__text">Пн - Пт с 9:00 до 18:00</span>
       </div>
 
       <div class="phone">
-        <div class="icon" aria-hidden="true"></div>
-        <a href="tel:+79787085608">+7 (978) 708-56-08</a>
+        <div class="icon phone__icon" aria-hidden="true"></div>
+        <a class="phone__text" href="tel:+79787085608">+7 (978) 708-56-08</a>
       </div>
 
     </div>
+
+    <nav class="navbar">
+    
+      <h1 class="logo-w-text navbar__logo-w-text">
+        <a class="logo-w-text__link" href="/">
+
+          <span class="logo logo-w-text__logo">
+            <img src="img/logo.png" width="87" height="55" alt="Сервис Газ Крым">
+          </span>
+
+          <span class="logo-w-text__text">Установка ГБО в Крыму</span>
+
+        </a>
+      </h1>
+
+      <ul class="nav-list navbar__nav-list">
+        <li class="nav-list__item"><a class="nav-list__link" href="#services">Услуги</a></li>
+        <li class="nav-list__item"><a class="nav-list__link" href="#">Преимущества</a></li>
+        <li class="nav-list__item"><a class="nav-list__link" href="#">Работы</a></li>
+        <li class="nav-list__item"><a class="nav-list__link" href="#">Контакты</a></li>
+        <li class="nav-list__item"><a class="nav-list__link" href="#">Частые вопросы</a></li>
+      </ul>
+
+    </nav>
+
   </header>
 
   <main class="main">
 
     <section class="hero container">
-      <h2>Переоборудование авто на газ</h2>
-      <h3>Метан-пропан&nbsp;<span class="small">от I до V поколения</span></h3>
-      <p>Перейдите с бензина на газ и сэкономьте на топливе от 30 000 руб. в год</p>
-      <img class="section-img" src="img/hero-car.jpg" width="557" height="363" alt="Автомобиль с ГБО">
+      <h2 class="hero__title">Переоборудование авто на газ</h2>
+      <h3 class="hero__sub-title">Метан-пропан&nbsp;<span class="small">от I до V поколения</span></h3>
+      <p class="hero__text">Перейдите с бензина на газ и сэкономьте на топливе от 30 000 руб. в год</p>
+      <img class="hero__img" src="img/hero-car.jpg" width="557" height="363" alt="Автомобиль с ГБО">
+      <a href="tel:+79787085608" class="btn btn_outline-red hero__btn">Подробнее</a>
     </section>
 
     <div class="section-separator container" aria-hidden="true">
       <div></div>
     </div>
 
-    <section class="services container">
-      <ul>
-        <li>
-          <div class="title-area">
-            <h2>Диагностика / Настройка <span class="highlight">ГБО</span> и системы зажигания</h2>
+    <section class="services container" id="services">
+      <ul class="services__list">
+
+        <li class="services__item">
+          <div class="services__title-area">
+            <h2 class="services__title">Диагностика / Настройка <span class="highlight">ГБО</span> и системы зажигания</h2>
           </div>
         </li>
-        <li>
-          <div class="title-area">
-            <h2>Продажа комплектующих</h2>
+
+        <li class="services__item">
+          <div class="services__title-area">
+            <h2 class="services__title">Продажа комплектующих</h2>
           </div>
         </li>
-        <li>
-          <div class="title-area">
-            <h2>ТО и ремонт <span class="highlight">ГБО</span></h2>
+
+        <li class="services__item">
+          <div class="services__title-area">
+            <h2 class="services__title">ТО и ремонт <span class="highlight">ГБО</span></h2>
           </div>
         </li>
-        <li>
-          <div class="title-area">
-            <h2>Опрессовка (аттестация) <span class="highlight">газовых баллонов</span></h2>
+
+        <li class="services__item">
+          <div class="services__title-area">
+            <h2 class="services__title">Опрессовка (аттестация) <span class="highlight">газовых баллонов</span></h2>
           </div>
         </li>
-        <li>
-          <div class="title-area">
-            <h2>Ремонт ходовой части автомобиля</h2>
+
+        <li class="services__item">
+          <div class="services__title-area">
+            <h2 class="services__title">Ремонт ходовой части автомобиля</h2>
           </div>
         </li>
+        
       </ul>
     </section>
 
