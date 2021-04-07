@@ -15,6 +15,8 @@ const
 
 onscroll = () => {
   if (scrollY !== 0) {
+    console.log(logoScale);
+    console.log(logoTranslateY);
     navbarLogo.style.transform = `scale(${logoScale})`
     navbarLogo.style.bottom = logoTranslateY + 'px'
   } else {
