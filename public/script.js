@@ -5,22 +5,22 @@ const
 
 /* Navbar Logo Scroll Transformations */
 
-const
-  navbarHeight = navbar.getBoundingClientRect().height,
-  logoSize = navbarLogo.getBoundingClientRect().height
+onload = () => {
+  const
+    navbarHeight = navbar.getBoundingClientRect().height,
+    logoSize = navbarLogo.getBoundingClientRect().height
 
-const
-  logoScale = navbarHeight / logoSize,
-  logoTranslateY = (1 - logoScale) * logoSize / -2
+  const
+    logoScale = navbarHeight / logoSize,
+    logoTranslateY = (1 - logoScale) * logoSize / -2
 
-onscroll = () => {
-  if (scrollY !== 0) {
-    console.log(logoScale);
-    console.log(logoTranslateY);
-    navbarLogo.style.transform = `scale(${logoScale})`
-    navbarLogo.style.bottom = logoTranslateY + 'px'
-  } else {
-    navbarLogo.style.transform = ''
-    navbarLogo.style.bottom = 0
-  }
+  onscroll = () => {
+    if (scrollY !== 0) {
+      navbarLogo.style.transform = `scale(${logoScale})`
+      navbarLogo.style.bottom = logoTranslateY + 'px'
+    } else {
+      navbarLogo.style.transform = ''
+      navbarLogo.style.bottom = 0
+    }
+}
 }
