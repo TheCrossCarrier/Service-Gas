@@ -124,7 +124,11 @@ a,
 
 /* HEADER */
 
-.header.container {}
+.header.container {
+  --top-strip-height: 44px;
+  position: sticky;
+  top: calc(var(--top-strip-height) * -1);
+}
 
 .header > * {
   margin-left: calc(var(--logo-size) / 2);
@@ -135,10 +139,11 @@ a,
 /* Top Strip */
 
 .top-strip {
-  height: 44px;
+  height: var(--top-strip-height);
   display: flex;
   justify-content: space-between;
-  font-size: 18px;
+  background-color: var(--clr-white);
+  font-size: 16px;
   color: var(--clr-blue);
 }
 
@@ -155,8 +160,8 @@ a,
 /* Address */
 
 .address__icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 23px;
   background-image: url(img/geo.svg);
 }
 
@@ -167,16 +172,16 @@ a,
 /* Working Hours */
 
 .working-hours__icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 23px;
   background-image: url(img/clock.svg);
 }
 
 /* Phone */
 
 .phone__icon {
-  width: 24px;
-  height: 24px;
+  width: 22px;
+  height: 23px;
   background-image: url(img/phone.svg);
 }
 
@@ -192,9 +197,10 @@ a,
 /* Navbar */
 
 .navbar {
+  --navbar-height: calc(var(--box-shadow-step) * 3 + 67px);
   position: relative;
   padding-bottom: calc(var(--box-shadow-step) * 3);
-  height: calc(var(--box-shadow-step) * 3 + 67px);
+  height: var(--navbar-height);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -223,6 +229,7 @@ a,
   position: absolute;
   left: calc(var(--logo-size) / 2 * -1);
   bottom: 0;
+  transition: transform .5s, bottom .5s;
 }
 
 /* Nav-list */
