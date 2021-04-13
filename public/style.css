@@ -316,8 +316,8 @@ a,
   width: fit-content;
   flex-flow: wrap;
   align-items: center;
-  background-color: var(--clr-light-red);
   border-radius: 5px;
+  background-color: var(--clr-light-red);
   font: 600 clamp(30px, 5.45vw, 42px) var(--ff-primary);
   text-transform: uppercase;
   color: var(--clr-red);
@@ -325,7 +325,7 @@ a,
 
 .hero__sub-title .small {
   margin-left: 22px;
-  font: 24px var(--ff-secondary);
+  font: clamp(18px, 3.64vw, 24px) var(--ff-secondary);
   text-transform: none;
   color: var(--clr-dark-red);
 }
@@ -359,11 +359,13 @@ a,
 }
 
 .hero__img {
+  grid-column-end: -1;
+  grid-row: 1 / -1;
+  object-fit: contain;
   z-index: -10;
   margin-top: 35px;
   margin-left: -53px;
-  grid-column-end: -1;
-  grid-row: 1 / -1;
+  width: min(90vw, 557px);
 }
 
 /* Manufacturers */
@@ -403,9 +405,9 @@ a,
 .tile {
   --pseudoelement-offset-x: 7.11%;
   position: relative;
-  padding: 0 51px 54px;
-  width: 400px;
-  height: 404px;
+  padding: 0 min(51px, 10.5vw) min(54px, 11vw);
+  width: min(400px, 80vw);
+  min-height: 404px;
   background-color: var(--clr-white);
   border: 3px solid var(--clr-red);
   border-radius: 5px;
@@ -417,7 +419,7 @@ a,
   z-index: -10;
   top: -4.16%;
   width: inherit;
-  height: inherit;
+  min-height: inherit;
   border: inherit;
   border-color: var(--clr-blue);
   border-radius: inherit;
@@ -435,7 +437,7 @@ a,
   --title-block-offset-x: -14px;
   position: absolute;
   margin-top: 53px;
-  width: 340px;
+  width: clamp(250px, 70vw, 340px);
   height: 57px;
   display: flex;
   justify-content: center;
@@ -458,13 +460,13 @@ a,
 
 .tile__text {
   margin-top: 157px;
-  font-size: 23px;
+  font-size: clamp(18px, 4.73vw, 23px);
   color: var(--clr-blue);
 }
 
 .tile_right .tile__text {
   text-align: right;
-  font-size: 26px;
+  font-size: clamp(21px, 5.34vw, 26px);
 }
 
 .tile_left::after {
@@ -486,7 +488,6 @@ a,
 /* Services */
 
 .services.container {
-  /* padding-top: 100px; */
   padding-bottom: 100px;
 }
 
@@ -571,7 +572,7 @@ a,
 /* Footer */
 
 .footer {
-  padding: 70px 0;
+  padding-bottom: 70px;
   background-color: var(--clr-light-blue);
   font-size: 19px;
   color: var(--clr-blue);
@@ -580,6 +581,10 @@ a,
 .footer__container.container {
   display: flex;
   justify-content: space-between;
+}
+
+.footer__container > * {
+  margin-top: min(70px, 5.65vw);
 }
 
 .footer__logo-w-text .logo-w-text__text {
@@ -614,7 +619,7 @@ a,
 }
 
 .footer__contacts .icon {
-  margin-right: 32px;
+  margin-right: min(32px, 2.6vw);
   width: 32px;
   height: 32px;
 }
@@ -625,10 +630,17 @@ a,
 
 .footer .phone__text,
 .footer .email__text {
-  font-size: 23px;
+  font-size: clamp(20px, 1.8vw, 23px);
 }
 
 /* MEDIA QUERIES */
+
+@media (max-width: 1240px) {
+  .footer__container.container {
+    flex-flow: column;
+    align-items: center;
+  }
+}
 
 @media (max-width: 1116px) {
   .top-strip .working-hours {
@@ -641,6 +653,7 @@ a,
     width: fit-content;
   }
   .hero__img {
+    margin-top: 0;
     margin-left: 0;
   }
   .about-us.container {
