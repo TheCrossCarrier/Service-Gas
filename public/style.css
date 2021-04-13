@@ -404,6 +404,14 @@ a,
   border-radius: inherit;
 }
 
+.tile_left {
+  box-shadow: -3px 4px 4px rgba(196, 196, 196, .75);
+}
+
+.tile_right {
+  box-shadow: 3px 4px 4px rgba(196, 196, 196, .75);
+}
+
 .tile__title {
   --title-block-offset-x: -14px;
   position: absolute;
@@ -442,12 +450,10 @@ a,
 
 .tile_left::after {
   left: var(--pseudoelement-offset-x);
-  box-shadow: 3px 4px 4px rgba(196, 196, 196, .75);
 }
 
 .tile_right::after {
   right: var(--pseudoelement-offset-x);
-  box-shadow: -3px 4px 4px rgba(196, 196, 196, .75);
 }
 
 /* About us::Logo */
