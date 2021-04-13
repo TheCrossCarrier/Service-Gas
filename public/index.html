@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="style.css">
 
+  <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=57256de5-97d3-420d-93ba-8066db53ac6c"></script>
   <script defer src="script.js"></script>
 
 </head>
@@ -24,12 +25,13 @@
 
       <div class="address">
         <div class="icon address__icon" aria-hidden="true"></div>
-        <address class="address__text">Симферопольский р-н, с. Фонтаны, ул. Озенбашская, 2А</address>
+        <address class="address__text">Симферопольский р-н, с. Фонтаны, ул. Озенбашская, 2А<div class="small">(на территории АГНКС метан «VTG»)</div>
+        </address>
       </div>
 
       <div class="working-hours">
         <div class="icon working-hours__icon" aria-hidden="true"></div>
-        <span class="working-hours__text">Пн - Пт с 09:00 до 17:00, Сб с 10:00 до 14:00 (офис)</span>
+        <div class="working-hours__text">Пн - Пт с 09:00 до 17:00<br>Сб с 10:00 до 14:00 (офис)</div>
       </div>
 
       <div class="phone">
@@ -40,9 +42,9 @@
     </div>
 
     <nav class="navbar">
-    
+
       <h1 class="logo-w-text navbar__logo-w-text">
-        <a class="logo-w-text__link" href="/">
+        <a class="logo-w-text__link" href="#">
 
           <span class="logo logo-w-text__logo">
             <img src="img/logo.png" width="87" height="55" alt="Сервис Газ Крым">
@@ -53,12 +55,18 @@
         </a>
       </h1>
 
-      <ul class="nav-list navbar__nav-list">
-        <li class="nav-list__item"><a class="nav-list__link" href="#">О нас</a></li>
-        <li class="nav-list__item"><a class="nav-list__link" href="#services">Услуги</a></li>
-        <li class="nav-list__item"><a class="nav-list__link" href="#">Работы</a></li>
-        <li class="nav-list__item"><a class="nav-list__link" href="#">Контакты</a></li>
-      </ul>
+      <div class="navbar__collapse">
+
+        <button class="navbar__collapse-btn" id="nav-btn" title="Меню"></button>
+
+        <ul class="nav-list navbar__nav-list" aria-labelledby="nav-btn">
+          <li class="nav-list__item"><a class="nav-list__link" href="#about-us">О нас</a></li>
+          <li class="nav-list__item"><a class="nav-list__link" href="#services">Услуги</a></li>
+          <li class="nav-list__item"><a class="nav-list__link" href="#">Работы</a></li>
+          <li class="nav-list__item"><a class="nav-list__link" href="#">Контакты</a></li>
+        </ul>
+
+      </div>
 
     </nav>
 
@@ -68,15 +76,48 @@
 
     <section class="hero container">
       <h2 class="hero__title">Переоборудование авто на газ</h2>
-      <h3 class="hero__sub-title">Метан-пропан&nbsp;<span class="small">от I до V поколения</span></h3>
+      <h3 class="hero__sub-title">
+        <span>Метан-пропан</span>
+        <span class="small">от I до V поколения</span>
+      </h3>
       <p class="hero__text">Перейдите с бензина на газ и сэкономьте на топливе от 30 000 руб. в год</p>
-      <img class="hero__img" src="img/hero-car.jpg" width="557" height="363" alt="Автомобиль с ГБО">
+      <ul class="hero__list">
+        <li class="hero__list-item">Digitronic, Poletron, Prins, Alpha, BRC  и др.</li>
+        <li class="hero__list-item">гарантия 3 года без ограничения пробега</li>
+      </ul>
       <a href="tel:+79787085608" class="btn btn_outline-red hero__btn">Подробнее</a>
+      <img class="hero__img" src="img/hero-car.jpg" width="557" height="363" alt="Автомобиль с ГБО">
     </section>
 
-    <div class="section-separator container" aria-hidden="true">
-      <div></div>
-    </div>
+    <section class="manufacturers" id="manufacturers">
+      <div class="container">
+        <ul class="manufacturers__list">
+          <li class="manufacturers__item"><img class="manufacturers__img" src="img/digitronic.svg" width="201" height="31" alt="Digitronic"></li>
+          <li class="manufacturers__item"><img class="manufacturers__img" src="img/poletron.svg" width="211" height="40" alt="Poletron"></li>
+          <li class="manufacturers__item"><img class="manufacturers__img" src="img/prins.svg" width="176.5" height="65.5" alt="Prins"></li>
+          <li class="manufacturers__item"><img class="manufacturers__img" src="img/alpha.svg" width="174.5" height="85" alt="Alpha"></li>
+          <li class="manufacturers__item"><img class="manufacturers__img" src="img/brc.svg" width="136" height="98" alt="BRC"></li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="about-us container" id="about-us">
+
+      <article class="tile tile_left about-us__tile">
+        <h2 class="tile__title">15 лет опыта</h2>
+        <p class="tile__text">Мы не останавливаемся на достигнутом и продолжаем повышать свою квалификацию, регулярно обучаясь как в России, так и за границей.</p>
+      </article>
+
+      <div class="logo about-us__logo">
+        <img src="img/logo.png" width="87" height="55" alt="Сервис Газ Крым">
+      </div>
+      
+      <article class="tile tile_right about-us__tile">
+        <h2 class="tile__title">Гарантия 3 года</h2>
+        <p class="tile__text">Гарантия качества 3 года на всю систему, без ограничения в пробеге.</p>
+      </article>
+
+    </section>
 
     <section class="services container" id="services">
       <ul class="services__list">
@@ -89,15 +130,23 @@
 
         <li class="services__item">
           <div class="services__title-area">
-            <h2 class="services__title">Продажа комплектующих</h2>
+            <h2 class="services__title">ТО и ремонт <span class="highlight">ГБО</span></h2>
           </div>
         </li>
 
         <li class="services__item">
           <div class="services__title-area">
-            <h2 class="services__title">ТО и ремонт <span class="highlight">ГБО</span></h2>
+            <h2 class="services__title">Регистрация <span class="highlight">ГБО</span> в ГИБДД</h2>
           </div>
         </li>
+
+        <li class="services__item">
+          <div class="services__title-area">
+            <h2 class="services__title">Продажа комплектующих</h2>
+          </div>
+        </li>
+
+        
 
         <li class="services__item">
           <div class="services__title-area">
@@ -110,8 +159,14 @@
             <h2 class="services__title">Ремонт ходовой части автомобиля</h2>
           </div>
         </li>
-        
+
       </ul>
+    </section>
+
+    <!--  -->
+
+    <section class="contacts">
+      <!-- <div id="map" style="width: 500px; height: 500px"></div> -->
     </section>
 
   </main>

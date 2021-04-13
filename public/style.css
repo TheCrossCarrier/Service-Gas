@@ -53,7 +53,6 @@ ul {
 
 a,
 :visited {
-  
   text-decoration: none;
   color: inherit;
 }
@@ -73,7 +72,7 @@ a,
 
 /* Section separator */
 
-.section-separator {
+/* .section-separator {
   margin-top: calc(var(--box-shadow-step) * -3);
   padding-bottom: calc(var(--box-shadow-step) * 3);
 }
@@ -81,7 +80,7 @@ a,
 .section-separator > div {
   height: calc(var(--box-shadow-step) * 3);
   box-shadow: var(--box-shadow-border-bottom);
-}
+} */
 
 /* Logo */
 
@@ -109,24 +108,32 @@ a,
   width: fit-content;
   border-radius: .277em;
   font-size: 18px;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out;
 }
-
-/* Buttons::Red */
 
 [class*=btn_outline-] {
   border: .066em solid currentColor;
   background-color: transparent;
 }
 
+/* Buttons::Red */
+
 .btn_outline-red {
   color: var(--clr-red);
+}
+
+.btn_outline-red:hover {
+  background-color: var(--clr-red);
+  color: var(--clr-white);
 }
 
 /* HEADER */
 
 .header.container {
-  --top-strip-height: 44px;
+  --top-strip-height: 53px;
+  padding: 0;
   position: sticky;
+  z-index: 100;
   top: calc(var(--top-strip-height) * -1);
 }
 
@@ -155,13 +162,13 @@ a,
 .top-strip .icon {
   flex: none;
   margin-right: 15px;
+  width: 24px;
+  height: 24px;
 }
 
 /* Address */
 
 .address__icon {
-  width: 22px;
-  height: 23px;
   background-image: url(img/geo.svg);
 }
 
@@ -169,19 +176,19 @@ a,
   font-style: normal;
 }
 
+.address__text .small {
+  font-size: 13px;
+}
+
 /* Working Hours */
 
 .working-hours__icon {
-  width: 22px;
-  height: 23px;
   background-image: url(img/clock.svg);
 }
 
 /* Phone */
 
 .phone__icon {
-  width: 22px;
-  height: 23px;
   background-image: url(img/phone.svg);
 }
 
@@ -197,7 +204,7 @@ a,
 /* Navbar */
 
 .navbar {
-  --navbar-height: calc(var(--box-shadow-step) * 3 + 67px);
+  --navbar-height: calc(var(--box-shadow-step) * 3 + 59px);
   position: relative;
   padding-bottom: calc(var(--box-shadow-step) * 3);
   height: var(--navbar-height);
@@ -241,7 +248,7 @@ a,
 }
 
 .nav-list__item:not(:first-child) {
-  margin-left: 45px;
+  margin-left: 60px;
 }
 
 .nav-list__link {
@@ -252,34 +259,47 @@ a,
   color: var(--clr-dark-blue);
 }
 
+/* Nav-list Collapse */
+
+.navbar__collapse-btn {
+  display: none;
+  width: 40px;
+  height: 40px;
+  background: url(img/menu.svg) center/contain no-repeat;
+  border: none;
+  outline-offset: 5px;
+  outline-color: var(--clr-blue);
+}
+
 /* MAIN */
 
 /* Hero */
 
 .hero.container {
-  --rows-quantity: 4;
-  padding-top: 100px;
-  padding-bottom: calc(100px - var(--box-shadow-step));
+  --rows-quantity: 5;
+  padding-top: min(100px, 11.18vw);
+  padding-bottom: min(111px, 10.07vw);
   max-width: 1076px;
   display: grid;
   grid-template: repeat(calc(var(--rows-quantity) + 1), auto) / max-content auto;
 }
 
 .hero__title {
-  font: 600 36px var(--ff-primary);
+  font: 600 clamp(26px, 4.67vw, 36px) var(--ff-primary);
   text-transform: uppercase;
-  color: var(--clr-dark-blue);
-  margin-bottom: 31px;
+  color: var(--clr-blue);
 }
 
 .hero__sub-title {
-  margin-bottom: 25px;
+  margin-top: 31px;
   padding: 5px 14px;
   display: flex;
+  width: fit-content;
+  flex-flow: wrap;
   align-items: center;
   background-color: var(--clr-light-red);
   border-radius: 5px;
-  font: 600 42px var(--ff-primary);
+  font: 600 clamp(30px, 5.45vw, 42px) var(--ff-primary);
   text-transform: uppercase;
   color: var(--clr-red);
 }
@@ -292,27 +312,156 @@ a,
 }
 
 .hero__text {
+  margin-top: 25px;
   max-width: 493px;
   font-size: 24px;
   color: var(--clr-dark-blue);
 }
 
+.hero__list {
+  list-style: disc;
+  margin-top: 37px;
+  margin-left: 34px;
+  font-size: 22px;
+}
+
+.hero__list-item::marker {
+  color: var(--clr-blue);
+}
+
+.hero__list-item {
+  color: var(--clr-dark-red);
+}
+
+.hero__list-item:not(:first-of-type) { margin-top: 12px }
+
+.hero__btn {
+  margin-top: 39px;
+}
+
 .hero__img {
   z-index: -10;
-  margin-top: 24px;
-  margin-left: -56px;
+  margin-top: 35px;
+  margin-left: -53px;
   grid-column-end: -1;
   grid-row: 1 / -1;
 }
 
-.hero__btn {
-  margin-top: 33px;
+/* Manufacturers */
+
+.manufacturers {
+  background-color: var(--clr-light-blue);
+}
+
+.manufacturers__list {
+  padding: 30px 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  flex-flow: wrap;
+}
+
+.manufacturers__item {
+  margin: 30px 20px;
+}
+
+.manufacturers__img[src="img/prins.svg"] {
+  margin-bottom: 30px;
+}
+
+/* About us */
+
+.about-us.container {
+  padding: 150px 0;
+  max-width: 1005.5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* About us::Tiles */
+
+.tile {
+  --pseudoelement-offset-x: 7.11%;
+  position: relative;
+  padding: 0 51px 54px;
+  width: 400px;
+  height: 404px;
+  background-color: var(--clr-white);
+  border: 3px solid var(--clr-red);
+  border-radius: 5px;
+}
+
+.tile::after {
+  content: '';
+  position: absolute;
+  z-index: -10;
+  top: -4.16%;
+  width: inherit;
+  height: inherit;
+  border: inherit;
+  border-color: var(--clr-blue);
+  border-radius: inherit;
+}
+
+.tile__title {
+  --title-block-offset-x: -14px;
+  position: absolute;
+  margin-top: 53px;
+  width: 340px;
+  height: 57px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--clr-light-red);
+  font: 500 27px var(--ff-primary);
+  text-transform: uppercase;
+  color: var(--clr-white);
+}
+
+.tile_left .tile__title {
+  left: -14px;
+  box-shadow: 2px 4px 4px rgba(196, 196, 196, .75);
+}
+
+.tile_right .tile__title {
+  right: -14px;
+  box-shadow: -2px 4px 4px rgba(196, 196, 196, .75);
+}
+
+.tile__text {
+  margin-top: 157px;
+  font-size: 23px;
+  color: var(--clr-blue);
+}
+
+.tile_right .tile__text {
+  text-align: right;
+  font-size: 26px;
+}
+
+.tile_left::after {
+  left: var(--pseudoelement-offset-x);
+  box-shadow: 3px 4px 4px rgba(196, 196, 196, .75);
+}
+
+.tile_right::after {
+  right: var(--pseudoelement-offset-x);
+  box-shadow: -3px 4px 4px rgba(196, 196, 196, .75);
+}
+
+/* About us::Logo */
+
+.about-us__logo {
+  flex: none;
+  z-index: 5;
+  transform: scale(1.5);
 }
 
 /* Services */
 
 .services.container {
-  padding-top: 100px;
+  /* padding-top: 100px; */
   padding-bottom: 100px;
 }
 
@@ -342,7 +491,7 @@ a,
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: .5;
+  opacity: .8;
   background: center/cover no-repeat;
   border-radius: inherit;
   box-shadow: 1px 2px 10px rgba(0, 0, 0, .5);
@@ -353,19 +502,23 @@ a,
 }
 
 .services__item:nth-of-type(2)::after {
-  background-image: url(img/diagnostic.jpg);
+  background-image: url(img/repair.jpg);
 }
 
 .services__item:nth-of-type(3)::after {
-  background-image: url(img/diagnostic.jpg);
+  background-image: url(img/register.jpg);
 }
 
 .services__item:nth-of-type(4)::after {
-  background-image: url(img/diagnostic.jpg);
+  background-image: url(img/spares.jpg);
 }
 
 .services__item:nth-of-type(5)::after {
-  background-image: url(img/diagnostic.jpg);
+  background-image: url(img/cylinders.jpg);
+}
+
+.services__item:nth-of-type(6)::after {
+  background-image: url(img/chassis.jpg);
 }
 
 .services__title-area {
@@ -393,13 +546,47 @@ a,
 /* MEDIA QUERIES */
 
 @media (max-width: 1116px) {
+  .top-strip .working-hours {
+    display: none;
+  }
   .hero.container {
     display: flex;
-    flex-direction: column;
+    flex-flow: column;
     align-items: center;
     width: fit-content;
   }
   .hero__img {
     margin-left: 0;
+  }
+  .about-us.container {
+    padding: 100px 0;
+    flex-flow: column;
+  }
+}
+
+@media (max-width: 968px) {
+  .top-strip .address {
+    display: none;
+  }
+  .top-strip {
+    justify-content: flex-end;
+  }
+  .navbar__nav-list {
+    display: none;
+  }
+  .navbar__collapse-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 530px) {
+  .logo-w-text__text {
+    display: none;
+  }
+}
+
+@media (max-width: 400px) {
+  .top-strip .phone {
+    display: none;
   }
 }
