@@ -154,12 +154,26 @@ a,
   color: var(--clr-blue);
 }
 
-.top-strip > * {
+.top-strip .phone__icon {
+  background-image: url(img/phone_red.svg);
+}
+
+.top-strip .phone__text {
+  color: var(--clr-red);
+}
+
+.address,
+.working-hours,
+.phone,
+.email {
   display: flex;
   align-items: center;
 }
 
-.top-strip .icon {
+.address__icon,
+.working-hours__icon,
+.phone__icon,
+.email__icon {
   flex: none;
   margin-right: 15px;
   width: 24px;
@@ -194,11 +208,16 @@ a,
 
 .phone__text {
   font-size: 20px;
-  color: var(--clr-red);
 }
 
 .phone__text:hover {
   text-decoration: underline;
+}
+
+/* Email */
+
+.email__icon {
+  background-image: url(img/email.svg);
 }
 
 /* Navbar */
@@ -216,6 +235,13 @@ a,
   box-shadow: var(--box-shadow-border-bottom);
 }
 
+.navbar .logo {
+  position: absolute;
+  left: calc(var(--logo-size) / 2 * -1);
+  bottom: 0;
+  transition: transform .5s, bottom .5s;
+}
+
 /* Logo with Text */
 
 .logo-w-text__link {
@@ -230,13 +256,6 @@ a,
 .logo-w-text__text {
   font: 600 24px var(--ff-primary);
   color: var(--clr-dark-blue);
-}
-
-.logo-w-text__logo.logo {
-  position: absolute;
-  left: calc(var(--logo-size) / 2 * -1);
-  bottom: 0;
-  transition: transform .5s, bottom .5s;
 }
 
 /* Nav-list */
@@ -547,6 +566,58 @@ a,
 
 .services .highlight {
   color: var(--clr-red);
+}
+
+/* Footer */
+
+.footer {
+  padding: 70px 0;
+  background-color: var(--clr-light-blue);
+  font-size: 19px;
+  color: var(--clr-blue);
+}
+
+.footer__container.container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer__logo-w-text .logo-w-text__text {
+  margin-left: 24px;
+}
+
+.footer__title {
+  margin-bottom: 30px;
+  font: 500 21px var(--ff-primary);
+  text-transform: uppercase;
+  color: var(--clr-red);
+}
+
+.footer__services {
+  max-width: 306px;
+}
+
+.footer__list > * + * {
+  margin-top: 22px;
+}
+
+.footer__contacts {
+  max-width: 398px;
+}
+
+.footer__contacts .icon {
+  margin-right: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+.footer__contacts .small {
+  font-size: 16px;
+}
+
+.footer .phone__text,
+.footer .email__text {
+  font-size: 23px;
 }
 
 /* MEDIA QUERIES */

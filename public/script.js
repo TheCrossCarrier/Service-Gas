@@ -1,10 +1,11 @@
 const
+  header = document.querySelector('.header'),
   navbar = document.querySelector('.navbar'),
   navbarLogo = document.querySelector('.navbar .logo')
 
 onload = () => {
 
-  /* Navbar Logo Scroll Transformations */
+  /* Header Scroll Transformations */
 
   const
     navbarHeight = navbar.getBoundingClientRect().height,
@@ -12,21 +13,31 @@ onload = () => {
 
   const
     logoScale = navbarHeight / logoSize,
-    logoTranslateY = (1 - logoScale) * logoSize / -2
+    logoTranslateY = (1 - logoScale) * logoSize / -2,
+    topStripHeight = getComputedStyle(header, null).getPropertyValue('--top-strip-height')
 
-  function logoTransform() {
-    if (scrollY !== 0) {
+  function headerTransform() {
+
+    if (matchMedia('(max-width: 400px)').matches) {
+
+      header.style.setProperty('--top-strip-height', '0px')
+      navbarLogo.style.transform = `scale(${logoScale})`
+      navbarLogo.style.bottom = logoTranslateY + 'px'
+    } else if (scrollY !== 0) {
+      header.style.setProperty('--top-strip-height', topStripHeight)
       navbarLogo.style.transform = `scale(${logoScale})`
       navbarLogo.style.bottom = logoTranslateY + 'px'
     } else {
+      header.style.setProperty('--top-strip-height', topStripHeight)
       navbarLogo.style.transform = 'none'
       navbarLogo.style.bottom = '0'
     }
+
   }
 
-  logoTransform()
+  headerTransform()
 
-  onscroll = logoTransform
+  onscroll = onresize = headerTransform
 }
 
 /* Yandex Maps API */
