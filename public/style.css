@@ -593,12 +593,20 @@ a,
   color: var(--clr-red);
 }
 
+.footer__list > * + * {
+  margin-top: 22px;
+}
+
 .footer__services {
   max-width: 306px;
 }
 
-.footer__list > * + * {
-  margin-top: 22px;
+.footer__service {
+  transition: color .15s ease-in-out;
+}
+
+.footer__service:hover {
+  color: var(--clr-dark-blue);
 }
 
 .footer__contacts {
