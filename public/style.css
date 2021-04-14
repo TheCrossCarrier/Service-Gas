@@ -5,15 +5,17 @@
 /* Variables */
 
 :root {
-  --clr-red:        hsl(356, 82%, 51%);
-  --clr-dark-red:   hsl(356, 82%, 35%);
-  --clr-light-red:  hsl(356, 82%, 85%);
-  --clr-blue:       hsl(224, 55%, 37%);
-  --clr-dark-blue:  hsl(224, 55%, 21%);
-  --clr-light-blue: hsl(224, 55%, 87%);
-  --clr-white:      white;
-  --ff-primary:     'Manrope', sans-serif;
-  --ff-secondary:   'Exo 2', sans-serif;
+  --clr-red:         hsl(356, 82%, 51%);
+  --clr-dark-red:    hsl(356, 82%, 35%);
+  --clr-light-red:   hsl(356, 82%, 85%);
+  --clr-blue:        hsl(224, 55%, 37%);
+  --clr-dark-blue:   hsl(224, 55%, 21%);
+  --clr-light-blue:  hsl(224, 55%, 87%);
+  --clr-green:       hsl(120, 50%, 45%);
+  --clr-light-green: hsl(120, 50%, 79%);
+  --clr-white:       white;
+  --ff-primary:      'Manrope', sans-serif;
+  --ff-secondary:    'Exo 2', sans-serif;
   --box-shadow-step: 3px;
   --box-shadow-border:
     inset 0 0 0   var(--box-shadow-step)           var(--clr-red),
@@ -26,6 +28,9 @@
     inset 0 calc(var(--box-shadow-step) * -3) 0   0 var(--clr-blue),
           0 var(--box-shadow-step)            4px 0 rgba(0, 0, 0, .25);
   --logo-size: 120px;
+  --navbar-height: calc(var(--box-shadow-step) * 3 + 59px);
+  scroll-padding-top: calc(var(--navbar-height) + 2rem);
+  scroll-behavior: smooth;
 }
 
 /* Preset */
@@ -36,10 +41,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-html {
-  scroll-behavior: smooth;
 }
 
 body {
@@ -155,11 +156,11 @@ a,
 }
 
 .top-strip .phone__icon {
-  background-image: url(img/phone_red.svg);
+  background-image: url(img/phone_green.svg);
 }
 
 .top-strip .phone__text {
-  color: var(--clr-red);
+  color: var(--clr-green);
 }
 
 .address,
@@ -223,7 +224,6 @@ a,
 /* Navbar */
 
 .navbar {
-  --navbar-height: calc(var(--box-shadow-step) * 3 + 59px);
   position: relative;
   padding-bottom: calc(var(--box-shadow-step) * 3);
   height: var(--navbar-height);
@@ -349,12 +349,13 @@ a,
 }
 
 .hero__list-item {
-  color: var(--clr-dark-red);
+  color: var(--clr-green);
 }
 
 .hero__list-item:not(:first-of-type) { margin-top: 12px }
 
 .hero__btn {
+  justify-self: flex-start;
   margin-top: 39px;
 }
 
@@ -442,7 +443,7 @@ a,
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: var(--clr-light-red);
+  background-color: var(--clr-green);
   font: 500 27px var(--ff-primary);
   text-transform: uppercase;
   color: var(--clr-white);
@@ -507,6 +508,9 @@ a,
   height: 191px;
   display: flex;
   border-radius: 5px;
+  box-shadow:
+    0   0   0    2px var(--clr-green),
+    1px 2px 10px 2px rgba(0, 0, 0, .5);
 }
 
 .services__item::after {
@@ -520,7 +524,7 @@ a,
   opacity: .8;
   background: center/cover no-repeat;
   border-radius: inherit;
-  box-shadow: 1px 2px 10px rgba(0, 0, 0, .5);
+  
 }
 
 .services__item:first-of-type::after {
