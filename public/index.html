@@ -163,13 +163,39 @@
       </ul>
     </section>
 
+    <section class="locale container" id="locale">
+
+      <h2 class="locale__title">Наш сервис-центр</h2>
+
+      <div class="locale__wrapper">
+
+        <div class="swiper-container locale__slider">
+          <div class="swiper-wrapper locale__list">
+            <div class="swiper-slide locale__item"><img class="locale__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+            <div class="swiper-slide locale__item"><img class="locale__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+            <div class="swiper-slide locale__item"><img class="locale__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+            <div class="swiper-slide locale__item"><img class="locale__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+            <div class="swiper-slide locale__item"><img class="locale__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+            <div class="swiper-slide locale__item"><img class="locale__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+          </div>
+        </div>
+
+        <div class="swiper-pagination locale__pagination"></div>
+
+        <div class="swiper-button-prev locale__prev-btn" title="Назад"></div>
+        <div class="swiper-button-next locale__next-btn" title="Вперёд"></div>
+
+      </div>
+
+    </section>
+
     <section class="works container" id="works">
 
       <h2 class="works__title">Наши работы</h2>
 
       <div class="works__wrapper">
-        <div class="swiper-container works__slider">
 
+        <div class="swiper-container works__slider">
           <div class="swiper-wrapper works__list">
             <div class="swiper-slide works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
             <div class="swiper-slide works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
@@ -178,7 +204,6 @@
             <div class="swiper-slide works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
             <div class="swiper-slide works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
           </div>
-
         </div>
 
         <div class="swiper-pagination works__pagination"></div>
@@ -190,8 +215,25 @@
 
     </section>
 
-    <section class="contacts" id="contacts">
-      <!-- <div id="map" style="width: 500px; height: 500px"></div> -->
+    <section class="contacts container" id="contacts">
+      
+      <div class="contacts__table">
+        <h3 class="contacts__title">Адрес</h3>
+        <p class="contacts__value">Симферопольский р-н, с. Фонтаны, ул. Озенбашская, 2А (на территории АГНКС метан «VTG»)</p>
+        <h3 class="contacts__title">Время работы</h3>
+        <p class="contacts__value">Пн - Пт с 09:00 до 17:00<br>Сб с 10:00 до 14:00 (офис)</p>
+        <h3 class="contacts__title">Телефон</h3>
+        <p class="contacts__value"><a href="+79787085608">+7 (978) 708-56-08</a></p>
+        <h3 class="contacts__title">E-mail</h3>
+        <p class="contacts__value"><a href="mailto:newservicegas@gmail.com">newservicegas@gmail.com</a></p>
+        <h3 class="contacts__title">Схема проезда</h3>
+      </div>
+
+      <div class="contacts__driving-directions">
+        <div class="contacts__gif"></div>
+        <div class="contacts__map" id="map"></div>
+      </div>
+      
     </section>
 
   </main>

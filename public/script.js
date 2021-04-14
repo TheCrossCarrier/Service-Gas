@@ -54,11 +54,11 @@ onload = () => {
 
   /* Sliders */
 
-  new Swiper('.works__slider', {
+  new Swiper('.locale__slider', {
     slidesPerView: 3,
     spaceBetween: 60,
     pagination: {
-      el: '.works__pagination',
+      el: '.locale__pagination',
       clickable: true
     },
     autoplay: {
@@ -68,12 +68,35 @@ onload = () => {
     loop: true,
     loopFillGroupWithBlank: true,
     pagination: {
+      el: '.locale__pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.locale__next-btn',
+      prevEl: '.locale__prev-btn'
+    }
+  })
+
+  new Swiper('.works__slider', {
+    slidesPerView: 3,
+    spaceBetween: 60,
+    pagination: {
+      el: '.works__pagination',
+      clickable: true
+    },
+    autoplay: {
+      delay: 7500,
+      disableOnInteraction: false,
+    },
+    loop: true,
+    loopFillGroupWithBlank: true,
+    pagination: {
       el: '.works__pagination',
       clickable: true,
     },
     navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+      nextEl: '.works__next-btn',
+      prevEl: '.works__prev-btn'
     }
   })
 }
@@ -87,17 +110,17 @@ ymaps.ready(() => {
     map = new ymaps.Map('map', {
       center: [44.896350, 34.057387],
       zoom: 16
-    })
+    }),
 
-  placemark = new ymaps.Placemark(map.getCenter(), {
-    hintContent: 'ул. Озенбашская, 2А',
-    balloonContent: 'Service Gas Crimea'
-  }, {
-    iconLayout: 'default#image',
-    iconImageHref: 'img/pin.svg',
-    iconImageSize: [70, 91],
-    iconImageOffset: [-30, -90]
-  })
+    placemark = new ymaps.Placemark(map.getCenter(), {
+      hintContent: 'ул. Озенбашская, 2А',
+      balloonContent: 'Service Gas Crimea'
+    }, {
+      iconLayout: 'default#image',
+      iconImageHref: 'img/pin.svg',
+      iconImageSize: [70, 91],
+      iconImageOffset: [-30, -90]
+    })
 
   map.geoObjects
     .add(placemark)
