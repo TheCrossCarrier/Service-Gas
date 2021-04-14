@@ -55,8 +55,8 @@ onload = () => {
   /* Sliders */
 
   new Swiper('.locale__slider', {
-    slidesPerView: 3,
-    spaceBetween: 60,
+    slidesPerView: 1,
+    spaceBetween: 20,
     pagination: {
       el: '.locale__pagination',
       clickable: true
@@ -74,12 +74,22 @@ onload = () => {
     navigation: {
       nextEl: '.locale__next-btn',
       prevEl: '.locale__prev-btn'
+    },
+    breakpoints: {
+      '@1.00': {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+      '@1.50': {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      }
     }
   })
 
   new Swiper('.works__slider', {
-    slidesPerView: 3,
-    spaceBetween: 60,
+    slidesPerView: 1,
+    spaceBetween: 20,
     pagination: {
       el: '.works__pagination',
       clickable: true
@@ -97,6 +107,16 @@ onload = () => {
     navigation: {
       nextEl: '.works__next-btn',
       prevEl: '.works__prev-btn'
+    },
+    breakpoints: {
+      '@1.00': {
+        slidesPerView: 2,
+        spaceBetween: 40,
+      },
+      '@1.50': {
+        slidesPerView: 3,
+        spaceBetween: 50,
+      }
     }
   })
 }
