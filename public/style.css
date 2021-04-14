@@ -298,6 +298,8 @@ a,
   --rows-quantity: 5;
   padding-top: min(100px, 11.18vw);
   padding-bottom: min(111px, 10.07vw);
+  padding-left: min(20px, 3vw);
+  padding-right: min(20px, 3vw);
   max-width: 1076px;
   display: grid;
   grid-template: repeat(calc(var(--rows-quantity) + 1), auto) / max-content auto;
@@ -565,12 +567,67 @@ a,
 }
 
 .services__title {
-  font-size: 22px;
+  font-size: clamp(18px, 4.8vw, 22px);
   color: var(--clr-blue);
 }
 
 .services .highlight {
   color: var(--clr-red);
+}
+
+/* Works */
+
+.works {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.works__title {
+  font: 600 clamp(26px, 4.67vw, 36px) var(--ff-primary);
+  text-align: center;
+  text-transform: uppercase;
+  color: var(--clr-blue);
+}
+
+.works__slider.slider {
+  --slider-gutter: 60px;
+  --slider-item-width: 345px;
+}
+
+.works__list {
+}
+
+.works__img {
+  object-fit: cover;
+}
+
+/* Slider */
+
+.slider {
+  display: flex;
+}
+
+.slider__list {
+  display: flex;
+  overflow: hidden;
+}
+
+.slider__item {
+  width: var(--slider-item-width, 300px);
+}
+
+.slider__item:not(:first-child) {
+  margin-left: var(--slider-gutter, 20px);
+}
+
+.slider__prev-btn,
+.slider__next-btn {
+  width: 20%;
+}
+
+.slider__next-btn {
 }
 
 /* Footer */
@@ -673,8 +730,32 @@ a,
   .top-strip {
     justify-content: flex-end;
   }
+  .navbar__collapse {
+    position: relative;
+  }
   .navbar__nav-list {
     display: none;
+    position: absolute;
+    z-index: 100;
+    right: 0;
+    top: calc(var(--navbar-height) - 1rem);
+    border: 2px solid var(--clr-green);
+    border-radius: 5px;
+  }
+  .navbar__collapse-btn.active ~ .navbar__nav-list {
+    display: block;
+  }
+  .navbar .nav-list__item:not(:first-child) {
+    margin-left: 0;
+  }
+  .navbar .nav-list__link {
+    display: block;
+    padding: 20px 40px;
+    background-color: var(--clr-light-blue);
+    text-align: center;
+  }
+  .navbar .nav-list__item:not(:first-child) .nav-list__link {
+    border-top: 1px solid var(--clr-blue);
   }
   .navbar__collapse-btn {
     display: block;

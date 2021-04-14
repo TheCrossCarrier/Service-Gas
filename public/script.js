@@ -1,7 +1,10 @@
 const
   header = document.querySelector('.header'),
   navbar = document.querySelector('.navbar'),
-  navbarLogo = document.querySelector('.navbar .logo')
+  navbarLogo = document.querySelector('.navbar .logo'),
+  navbarMenuBtn = document.querySelector('.navbar__collapse-btn'),
+  navbarNavList = document.querySelector('.navbar__nav-list'),
+  navbarNavListLinks = document.querySelectorAll('.navbar .nav-list__link')
 
 onload = () => {
 
@@ -32,6 +35,14 @@ onload = () => {
       navbarLogo.style.transform = 'none'
       navbarLogo.style.bottom = '0'
     }
+
+    /* Header Menu Button */
+
+    navbarMenuBtn.onclick = () => navbarMenuBtn.classList.toggle('active')
+
+    Array.from(navbarNavListLinks).forEach(
+      link => link.onclick = () => navbarMenuBtn.classList.remove('active')
+    )
 
   }
 
