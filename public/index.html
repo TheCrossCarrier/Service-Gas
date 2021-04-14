@@ -10,8 +10,10 @@
 
   <title>ГБО в Крыму - Service Gas Crimea</title>
 
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
   <link rel="stylesheet" href="style.css">
 
+  <script defer src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script defer src="https://api-maps.yandex.ru/2.1/?lang=ru_RU&amp;apikey=57256de5-97d3-420d-93ba-8066db53ac6c"></script>
   <script defer src="script.js"></script>
 
@@ -163,33 +165,28 @@
 
     <section class="works container" id="works">
 
-      <!-- <h2 class="works__title">Наши работы</h2>
+      <h2 class="works__title">Наши работы</h2>
 
-      <div class="slider works__slider">
+      <div class="works__wrapper">
+        <div class="swiper-container works__slider">
 
-        <button class="slider__prev-btn" title="Назад"></button>
+          <div class="swiper-wrapper works__list">
+            <div class="swiper-slide works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+            <div class="swiper-slide works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+            <div class="swiper-slide works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+            <div class="swiper-slide works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+            <div class="swiper-slide works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+            <div class="swiper-slide works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></div>
+          </div>
 
-        <ul class="slider__list works__list">
-          <li class="slider__item works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></li>
-          <li class="slider__item works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></li>
-          <li class="slider__item works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></li>
-          <li class="slider__item works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></li>
-          <li class="slider__item works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></li>
-          <li class="slider__item works__item"><img class="works__img" src="img/repair.jpg" width="300" height="250" alt=""></li>
-        </ul>
+        </div>
 
-        <button class="slider__next-btn" title="Вперёд"></button>
+        <div class="swiper-pagination works__pagination"></div>
 
-        <ul class="slider__bullets">
-          <li class="slider__bullet"></li>
-          <li class="slider__bullet"></li>
-          <li class="slider__bullet"></li>
-          <li class="slider__bullet"></li>
-          <li class="slider__bullet"></li>
-          <li class="slider__bullet"></li>
-        </ul>
+        <div class="swiper-button-prev works__prev-btn" title="Назад"></div>
+        <div class="swiper-button-next works__next-btn" title="Вперёд"></div>
 
-      </div> -->
+      </div>
 
     </section>
 
