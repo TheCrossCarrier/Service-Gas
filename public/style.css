@@ -627,11 +627,6 @@ body::before {
   border-radius: 5px;
 }
 
-.works__prev-btn, .locale__prev-btn,
-.works__next-btn, .locale__next-btn {
-
-}
-
 .works__pagination,
 .locale__pagination {
   left: 50%;
@@ -789,9 +784,6 @@ body::before {
   font-size: clamp(20px, 1.8vw, 23px);
 }
 
-.manager {
-
-}
 .footer__manager {
   display: flex;
   flex-flow: column;
