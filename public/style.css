@@ -160,6 +160,7 @@ a,
 }
 
 .top-strip .phone__text {
+  margin-right: 10px;
   color: var(--clr-green);
 }
 
@@ -722,8 +723,28 @@ body::before {
   margin-top: min(70px, 5.65vw);
 }
 
-.footer__logo-w-text .logo-w-text__text {
-  margin-left: 24px;
+.footer__logos {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.priliv {
+  margin-top: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.priliv__icon {
+  margin-right: 10px;
+  width: 60px;
+  height: 40px;
+  background-image: url(img/logo_fish.png);
+}
+
+.priliv__text {
+  font-size: 16px;
 }
 
 .footer__title {
@@ -787,26 +808,27 @@ body::before {
 .phone__messagers {
   padding: 8px 0;
 }
-.phone__viber-icon {
+.icon_viber {
   width: 34px;
   height: 34px;
   display: inline-flex;
   background-image: url(img/viber.png);
   background-size: 160%;
 }
-.phone__whatsapp-icon {
+.icon_whatsapp {
   width: 34px;
   height: 34px;
   display: inline-flex;
   background-image: url(img/whatsapp.png);
-  background-size: 130%;
-}
-.manager__call-btn {
+  background-size: 120%;
 }
 
 /* MEDIA QUERIES */
 
 @media (max-width: 1240px) {
+  .top-strip .working-hours {
+    display: none;
+  }
   .footer__container.container {
     flex-flow: column;
     align-items: center;
@@ -814,9 +836,6 @@ body::before {
 }
 
 @media (max-width: 1116px) {
-  .top-strip .working-hours {
-    display: none;
-  }
   .hero.container {
     display: flex;
     flex-flow: column;
@@ -901,7 +920,7 @@ body::before {
   }
 }
 
-@media (max-width: 400px) {
+@media (max-width: 480px) {
   .top-strip .phone {
     display: none;
   }
