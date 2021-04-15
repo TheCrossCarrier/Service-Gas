@@ -288,6 +288,7 @@ a,
   border: none;
   outline-offset: 5px;
   outline-color: var(--clr-blue);
+  justify-content: space-between;
 }
 
 /* MAIN */
@@ -765,6 +766,42 @@ body::before {
 .footer .phone__text,
 .footer .email__text {
   font-size: clamp(20px, 1.8vw, 23px);
+}
+
+.manager {
+
+}
+.footer__manager {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.manager__img {
+  margin-bottom: 20px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background-image: url(img/manager.png);
+  box-shadow: var(--box-shadow-border);
+}
+.phone__messagers {
+  padding: 8px 0;
+}
+.phone__viber-icon {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  background-image: url(img/viber.png);
+  background-size: 160%;
+}
+.phone__whatsapp-icon {
+  width: 34px;
+  height: 34px;
+  display: inline-flex;
+  background-image: url(img/whatsapp.png);
+  background-size: 130%;
+}
+.manager__call-btn {
 }
 
 /* MEDIA QUERIES */
